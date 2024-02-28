@@ -1,0 +1,68 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  fieldOfView 0.785397
+  orientation -0.19814566476254195 -0.23706939333668783 0.9510711846538014 4.841229517001908
+  position 0.000925744867208974 0.10021129470789306 0.18132991749447672
+}
+TexturedBackgroundLight {
+}
+TexturedBackground {
+}
+RectangleArena {
+  floorSize 5 5
+}
+Robot {
+  translation 0 0 0.14
+  children [
+    DEF LeftLeg1 Solid {
+      children [
+        HingeJoint {
+          device [
+            DEF LeftLeg1_Joint1_Motor1 RotationalMotor {
+              name "LeftLeg1_Joint1_Motor1"
+            }
+          ]
+          endPoint Solid {
+          }
+        }
+        DEF LeftLeg1_Joint1 Solid {
+          translation 0.0282844 0.0282844 -0.0099999
+          rotation 2.346409999992433e-06 -9.719149999968655e-07 0.999999999996775 -2.3561953071795863
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 0.333333 1
+                metalness 0
+              }
+              geometry Mesh {
+                url [
+                  "../../../SG90mini.stl"
+                ]
+              }
+            }
+          ]
+          name "LeftLeg1_Joint1"
+        }
+      ]
+      name "LeftLeg1"
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        metalness 0
+      }
+      geometry Mesh {
+        url [
+          "../../../BODYmini.stl"
+        ]
+      }
+    }
+  ]
+  name "S1"
+}
